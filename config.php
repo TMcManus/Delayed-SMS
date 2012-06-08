@@ -31,7 +31,7 @@ $from_number = "";
 require_once("IronCore.class.php");
 require_once("IronWorker.class.php");
 
-/* 
+/** 
  * However, you will need an iron.io account and you will need to create 
  * a new project. You can create a project at https://hud.iron.io/dashboard
  * Once you have a new project
@@ -51,7 +51,7 @@ $iw = new IronWorker(array(
  */
 $followup_sms_url = "";
 
-/* 
+/** 
  * After you have done all of this, saved and uploaded this folder to your
  * PHP capable webserver, point the SMS Request URL for your number at
  * the URL of the 'first_response.php' file. Save and test. You should get
