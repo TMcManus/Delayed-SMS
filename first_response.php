@@ -1,27 +1,7 @@
 <?php
-/**
- * Include twilio-php, the offical Twilio PHP Helper Library, which can be found at
- * http://www.twilio.com/docs/libraries
- */ 
-require('Services/Twilio.php');
+require_once('config.php');
 
-// Include the IronWorker libraries
-require_once("IronCore.class.php");
-require_once("IronWorker.class.php");
-
-// Credentials for IronWorker
-$iw = new IronWorker(array(
-    'token' => '', // ADD Your Token
-    'project_id' => '' // ADD Your Project ID
-));
-
-// URL of the follow-up-sms.php
-$followup_sms_url = ""; // ADD the URL where follow-up-sms.php will be located
-
-// Twilio number which the followup SMS should come from
-$from_number = ""; // ADD the Twilio number you want the SMS to come from
-
-// Generate TwiML for the initial response
+// Generate TwiML for the initial response. If you have your own code, enter it above this.
 $response = new Services_Twilio_Twiml();
 $response->sms('Thank you for texting in. You will receive another message in 1 minute.'); // CHANGE this to alter the initial message
 print $response;
